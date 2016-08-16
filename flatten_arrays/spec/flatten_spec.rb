@@ -8,13 +8,25 @@ describe '#flatten_nested_arrays' do
   end
 
   it 'should combine nested arrays' do
-    numbers = [1,2,[3,4,5],6,[7,8,9]]
+    numbers = [1,2,[3,4,5],6,7,8,9]
+
+    expect(@flatten.flatten_nested_arrays(numbers)).to eq([1,2,3,4,5,6,7,8,9])
+  end
+
+  it 'should combine multiple nested arrays' do
+    numbers = [1,2,[3,4,5],[6,7,8],9]
 
     expect(@flatten.flatten_nested_arrays(numbers)).to eq([1,2,3,4,5,6,7,8,9])
   end
 
   it 'should combine nested arrays with nested arrays' do
-    numbers = [1,2,[3,[4,5]],[6,[7,8,9]]]
+    numbers = [1,2,[3,[4,5]],6,7,8,9]
+
+    expect(@flatten.flatten_nested_arrays(numbers)).to eq([1,2,3,4,5,6,7,8,9])
+  end
+
+  it 'should combine multiple nested arrays with multplie nested arrays' do
+    numbers = [1,2,[3,[4,5]],[6,[7,[8,9]]]]
 
     expect(@flatten.flatten_nested_arrays(numbers)).to eq([1,2,3,4,5,6,7,8,9])
   end
