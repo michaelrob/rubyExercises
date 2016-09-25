@@ -9,3 +9,7 @@ Rebuilt ruby's flatten functionality. To run:
 There are tests, run them by using:
 
 `ruby flatten_arrays/test/flatten_spec.rb`
+
+## Word Challenge
+
+todo :) 
