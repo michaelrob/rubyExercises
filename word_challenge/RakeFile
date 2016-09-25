@@ -1,0 +1,6 @@
+task :default => [:run]
+
+desc "load the dictionary, output words and sequence"
+task "run" do
+  
+end
