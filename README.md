@@ -12,4 +12,5 @@ There are tests, run them by using:
 
 ## Word Challenge
 
-todo :) 
+- `bundle exec rake`  : Will attempt to run your application and print output to the terminal.
+- `bundle exec rspec` : Runs the test suite
