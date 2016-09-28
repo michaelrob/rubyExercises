@@ -12,5 +12,7 @@ There are tests, run them by using:
 
 ## Word Challenge
 
+Use the below commands to run, and run tests. Don't forget to run `bundle` first. 
+
 - `bundle exec rake`  : Will attempt to run your application and print output to the terminal.
 - `bundle exec rspec` : Runs the test suite
