@@ -27,7 +27,6 @@ class WordSort
       end
     end
 
-    binding.pry
     return sorted
   end
 end
