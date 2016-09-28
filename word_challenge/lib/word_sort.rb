@@ -6,7 +6,7 @@ require_relative 'word_sort_service'
 # the corresponding words that contain the sequences, in the same order, again one
 # per line.
 
-class WordChallenge
+class WordSort
   def self.call(dictionary)
     sort_service = WordSortService.new
     sorted = []

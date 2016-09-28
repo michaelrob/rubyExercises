@@ -9,5 +9,5 @@ task "run" do
   dictionary = File.read("data/dictionary.txt")
 
   # call the app, passing the data as strings containing JSON
-  result_json = WordChallenge.call(dictionary)
+  result_json = WordSort.call(dictionary)
 end

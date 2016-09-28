@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'word_challenge'
+require 'word_sort'
 
 describe "integration" do
 
