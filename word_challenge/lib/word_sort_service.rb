@@ -29,4 +29,14 @@ class WordSortService
 
     return new_sequences
   end
+
+  def find_duplicates(word, sequence, sorted)
+
+    if sorted.include?([word, sequence])
+      # remove the things yo
+      return sorted
+    else
+      return
+    end
+  end
 end
