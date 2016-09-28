@@ -24,7 +24,7 @@ class WordSortService
         new_sequence.push(word_array[j])
       end
 
-      new_sequences.push(new_squences)
+      new_sequences.push(new_sequence.join(''))
     end
 
     return new_sequences
