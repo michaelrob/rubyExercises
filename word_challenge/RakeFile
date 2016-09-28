@@ -3,7 +3,7 @@ task :default => [:run]
 desc "load the dictionary, output words and sequence"
 task "run" do
   $LOAD_PATH.unshift(File.dirname(__FILE__), "lib")
-  require 'word_challenge'
+  require 'word_sort'
 
   # Load the data into strings
   dictionary = File.read("data/dictionary.txt")
