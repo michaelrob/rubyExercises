@@ -16,6 +16,7 @@ class WordSort
 
     dictionary.each do |word|
       if word.length == 4
+        sort_service.find_duplicates(word, sorted)
         sorted.push([word, word])
       elsif word.length < 4
         next
