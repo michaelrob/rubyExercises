@@ -16,17 +16,18 @@ class WordSort
 
     dictionary.each do |word|
       if word.length == 4
-        sort_service.find_duplicates(word, word, sorted) || sorted.push([word, word])
+        sort_service.find_duplicates(word, sorted) || sorted.push([word, word])
       elsif word.length < 4
         next
       else
         new_sequences = sort_service.find_sequences(word)
         new_sequences.each do |sequence|
-          sort_service.find_duplicates(word, sequence, sorted) || sorted.push([word, sequence])
+          sort_service.find_duplicates(sequence, sorted) || sorted.push([word, sequence])
         end
       end
     end
 
+    binding.pry
     return sorted
   end
 end
