@@ -32,10 +32,17 @@ class WordSortService
 
   def find_duplicates(word, sequence, sorted)
 
+    # Check to see if there are duplicates
     if sorted.include?([word, sequence])
+
+      # Remove duplicated entries
       sorted = sorted - [[word, sequence]]
+
+      # Return sorted without duplicates
       return sorted
     else
+
+      # Return nothing in the case that no duplicates are found
       return
     end
   end
