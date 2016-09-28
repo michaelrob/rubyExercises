@@ -27,26 +27,27 @@ RSpec.describe WordSortService do
     let(:sorted) { [["carrots", "carr"], ["carrots", "arro"], ["give", "give"]] }
 
     it 'should return nothing if no duplicate found' do
-      results = sort_service.find_duplicates(word, "rots", sorted)
+      results = sort_service.find_duplicates("rots", sorted)
       expect(results).to be(nil)
     end
 
     it 'should return sorted de-duped if duplicate found' do
       deduped_sorted = [["carrots", "carr"], ["give", "give"]]
-      results = sort_service.find_duplicates(word, "arro", sorted)
+      results = sort_service.find_duplicates("arro", sorted)
       expect(results).to eq(deduped_sorted)
     end
 
     it 'should de-dupe list if the duplicate sequence is found in multiple words' do
       deduped_sorted = [["carrots", "carr"], ["give", "give"]]
-      results = sort_service.find_duplicates("arrow", "arro", sorted)
+      results = sort_service.find_duplicates("arro", sorted)
       expect(results).to eq(deduped_sorted)
     end
 
     it 'should de-dupe list if the duplicate sequence is found multiple times' do
-      sorted = [["carrots", "carr"], ["carrots", "arro"], ["barrows", "arro"], ["give", "give"]]
+      sorted = [["barrows", "arro"], ["carrots", "carr"], ["carrots", "arro"], ["give", "give"]]
       deduped_sorted = [["carrots", "carr"], ["give", "give"]]
-      results = sort_service.find_duplicates("arrow", "arro", sorted)
+
+      results = sort_service.find_duplicates("arro", sorted)
       expect(results).to eq(deduped_sorted)
     end
   end
