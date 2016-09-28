@@ -11,7 +11,7 @@ RSpec.describe WordSortService do
     let!(:results) { sort_service.find_sequences(word) }
 
     it 'should return sequences found in word' do
-      results.ech do |result|
+      results.each do |result|
         expect(word).to include(result)
       end
     end
