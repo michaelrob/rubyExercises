@@ -37,7 +37,7 @@ RSpec.describe WordSortService do
       expect(results).to eq(deduped_sorted)
     end
 
-    it 'should de-dupe list if the duplicate sequence is found in multiple words' do
+    it 'should de-dupe list if the duplicate sequence is found once in sorted' do
       deduped_sorted = [["carrots", "carr"], ["give", "give"]]
       results = sort_service.find_duplicates("arro", sorted)
       expect(results).to eq(deduped_sorted)
