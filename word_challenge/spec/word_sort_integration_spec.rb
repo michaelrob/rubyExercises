@@ -11,7 +11,7 @@ me"""
   }
 
   let(:result) { WordSort.call(dictionary) }
-  let(:expected_result) { [["arrow", "rrow"], ["arrow", "rows"], ["carrots", "carr"], ["carrots", "rrot"], ["carrots", "rots"], ["give", "give"]] }
+  let(:expected_result) { [["arrows", "rrow"], ["arrows", "rows"], ["carrots", "carr"], ["carrots", "rrot"], ["carrots", "rots"], ["give", "give"]] }
 
   describe WordSort do
     it 'outputs list of sequences and words' do
