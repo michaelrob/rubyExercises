@@ -16,13 +16,17 @@ class WordChallenge
 
     dictionary.each do |word|
       if word.length == 4
-        sorted.push(word)
+        sorted.push([word, word])
       elsif word.length < 4
         next
       else
         new_sequences = sort_service.find_sequences(word)
-        sorted.push(new_sequences
+        new_sequences.each do |sequence|
+          sorted.push([word, sequence])
+        end
       end
     end
+
+    return sorted
   end
 end
