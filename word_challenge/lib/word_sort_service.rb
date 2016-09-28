@@ -33,7 +33,7 @@ class WordSortService
   def find_duplicates(word, sequence, sorted)
 
     if sorted.include?([word, sequence])
-      # remove the things yo
+      sorted = sorted - [[word, sequence]]
       return sorted
     else
       return
