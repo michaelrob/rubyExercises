@@ -25,13 +25,5 @@ me"""
     it 'should contain sequence for each word' do
       expect(expected_result.length).to be(6)
     end
-
-    it 'words output file should exist' do
-
-    end
-
-    it 'sequences output file should exist' do
-
-    end
   end
 end
