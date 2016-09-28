@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'user_service'
+require 'word_sort_service'
 
 RSpec.describe WordSortService do
 
