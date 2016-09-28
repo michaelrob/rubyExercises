@@ -24,7 +24,11 @@ RSpec.describe WordSortService do
   end
 
   describe 'find_duplicates' do
-    it '' do
+    it 'should return nothing if no duplicate found' do
+
+    end
+
+    it 'should return sorted de-duped if duplicate found' do
       
     end
   end
