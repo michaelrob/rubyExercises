@@ -10,10 +10,10 @@ give
 me"""
   }
 
-  let(:result) { WordChallenge.call(dictionary) }
+  let(:result) { WordSort.call(dictionary) }
   let(:expected_result) { [["arrow", "rrow"], ["arrow", "rows"], ["carrots", "carr"], ["carrots", "rrot"], ["carrots", "rots"], ["give", "give"]] }
 
-  describe WordChallenge do
+  describe WordSort do
     it 'outputs list of sequences and words' do
       expect(result).to eq(expected_result)
     end
