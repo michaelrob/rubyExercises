@@ -30,13 +30,22 @@ class WordSortService
     return new_sequences
   end
 
-  def find_duplicates(word, sequence, sorted)
+  def find_duplicates(sequence, sorted)
 
     # Check to see if there are duplicates
-    if sorted.include?([word, sequence])
+    if sorted.flatten.include? sequence
 
-      # Remove duplicated entries
-      sorted = sorted - [[word, sequence]]
+      count = 0
+
+      # Loop through sorted
+      sorted.each do |array|
+
+        # Remove current sequence if appears at all in sorted
+        if array.include? sequence
+          sorted.delete_at(count)
+        end
+        count += 1
+      end
 
       # Return sorted without duplicates
       return sorted
