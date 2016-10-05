@@ -2,5 +2,38 @@ task :default => [:run]
 
 desc "load the dictionary, output words and sequence"
 task "run" do
-  
+  $LOAD_PATH.unshift(File.dirname(__FILE__), "lib")
+  require 'word_sort'
+
+  # Load the data into strings
+  dictionary = File.read("data/dictionary-test.txt")
+
+  # Call the app, passing the data as strings containing JSON
+  results = WordSort.call(dictionary)
+
+  puts sprintf("Sorted dictionary and collected sequences of each word")
+
+
+  words = []
+  sequences = []
+
+  # Sort through results into two groups, words and sequences
+  results.each do |result|
+    words.push(result[0])
+    sequences.push(result[1])
+  end
+
+  puts sprintf("Sorted words and sequences into their groups")
+
+  # Put each element from words on a new line, in a new file
+  File.open("data/words.txt", "w+") do |f|
+    f.puts(words)
+  end
+
+  # Put each element from sequences on a new line, in a new file
+  File.open("data/sequences.txt", "w+") do |f|
+    f.puts(sequences)
+  end
+
+  puts sprintf("Wrote data to data directory")
 end
