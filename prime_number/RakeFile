@@ -1,0 +1,11 @@
+require 'pry'
+
+task :default => [:run]
+
+desc "Flatten nested arrays"
+task "run" do
+  $LOAD_PATH.unshift(File.dirname(__FILE__), "lib")
+  require 'is_prime'
+
+  
+end
